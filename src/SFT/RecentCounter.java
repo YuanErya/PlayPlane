@@ -20,6 +20,4 @@ public class RecentCounter {
         }
         return re;
     }
-
-
 }
