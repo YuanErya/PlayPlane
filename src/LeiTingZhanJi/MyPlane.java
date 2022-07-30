@@ -44,6 +44,8 @@ public class MyPlane extends KeyAdapter implements Runnable {
 
     @Override
     public void run() {
-
+       while(true) {
+           getLocation();
+       }
     }
 }

@@ -26,6 +26,9 @@ public class Eplane implements Runnable {
 
     @Override
     public void run() {
+        while(true) {
+
+        }
 
     }
 }
