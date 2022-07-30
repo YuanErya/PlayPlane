@@ -4,13 +4,22 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 //自己所操控的飞机
-public class MyPlane extends KeyAdapter {
+public class MyPlane extends KeyAdapter implements Runnable {
+    String name;
     int x=0;
     int y=20;//初始飞机位于最底部
+    drew d;
 
-    public int [] getLocation() {
-        return new int[]{x, y,0};
-    }//以数组的形式返回位置,方便绘制图形；
+    public MyPlane(String name,drew d){
+        this.name = name;
+        this.d = d;
+        d.marks.put(name,new int[]{x,y,0});
+    }
+    public void getLocation() {
+        d.marks.remove(name);
+        d.marks.put(name,new int[]{x,y,0});
+    }
+
 
     public void keyTyped(KeyEvent e) {}
     public void keyPressed(KeyEvent e) {
@@ -33,4 +42,8 @@ public class MyPlane extends KeyAdapter {
     }
     public void keyReleased(KeyEvent e) {}
 
+    @Override
+    public void run() {
+
+    }
 }

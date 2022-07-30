@@ -1,19 +1,31 @@
 package LeiTingZhanJi;
 
 //敌人飞机类，由于我的飞机类要继承KeyAdapter,故没有创建飞机公共父类
-public class Eplane  {
+public class Eplane implements Runnable {
+    String name;
     int x;
-    int y;
-    public Eplane(int x, int y) {
+    int y=0;
+    drew d;
+
+    public Eplane(String name,int x, drew d) {
+        this.name = name;
         this.x =x;
-        this.y =y;
+        this.d =d;
+        d.marks.put(name,new int[]{x,y,1});
     }//传入飞机位置坐标；
 
     public  void move(){
         y++;
     }//敌人飞机只能向下方移动
 
-    public int [] getLocation() {
-        return new int[]{x, y,1};
-    }//以数组的形式返回位置,方便绘制图形；
+    public void getLocation() {
+        d.marks.remove(name);
+        d.marks.put(name,new int[]{x,y,2});
+    }
+
+
+    @Override
+    public void run() {
+
+    }
 }
