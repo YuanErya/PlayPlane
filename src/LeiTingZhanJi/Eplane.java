@@ -4,22 +4,22 @@ package LeiTingZhanJi;
 public class Eplane implements Runnable {
     String name;
     int x;
-    int y=0;
+    int y = 0;
     drew d;
 
     public Eplane(String name, drew d) {
         this.name = name;
-        this.x =(int)(Math.random()*20);//随机生成敌人飞机的位置
-        this.d =d;
-        d.marks.put(name,new int[]{x,y,1});
+        this.x = (int) (Math.random() * 20);//随机生成敌人飞机的位置
+        this.d = d;
+        d.marks.put(name, new int[]{x, y, 1});
     }//传入飞机位置坐标；
 
-    public  void move(){
+    public void move() {
         y++;
     }//敌人飞机只能向下方移动
 
     public void getLocation() {
-        d.marks.put(name,new int[]{x,y,1});
+        d.marks.put(name, new int[]{x, y, 1});
     }
 
 
@@ -30,7 +30,7 @@ public class Eplane implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }//线程睡眠实现敌人飞机的悬停
-        while(true) {
+        while (true) {
             move();
             getLocation();
             try {
@@ -38,7 +38,7 @@ public class Eplane implements Runnable {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            if(y>=21){
+            if (y >= 21) {
                 break;
             }
         }
