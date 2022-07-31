@@ -5,8 +5,8 @@ public class ZiDan  implements Runnable{
     int x;
     int y;
     drew d;
-    public ZiDan(MyPlane m,drew d) {
-        this.name =m.name+"zd";
+    public ZiDan(String name,MyPlane m,drew d) {
+        this.name =name;
         this.x =m.x;
         this.y =m.y+2;
         this.d = d;
@@ -31,6 +31,9 @@ while(true) {
         Thread.sleep(300);
     } catch (InterruptedException e) {
         e.printStackTrace();
+    }
+    if(y<=1){
+        break;//结束线程
     }
 }
 

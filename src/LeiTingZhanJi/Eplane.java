@@ -7,9 +7,9 @@ public class Eplane implements Runnable {
     int y=0;
     drew d;
 
-    public Eplane(String name,int x, drew d) {
+    public Eplane(String name, drew d) {
         this.name = name;
-        this.x =x;
+        this.x =(int)(Math.random()*20);//随机生成敌人飞机的位置
         this.d =d;
         d.marks.put(name,new int[]{x,y,1});
     }//传入飞机位置坐标；
@@ -25,8 +25,22 @@ public class Eplane implements Runnable {
 
     @Override
     public void run() {
+        try {
+            Thread.sleep(4000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }//线程睡眠实现敌人飞机的悬停
         while(true) {
+            move();
             getLocation();
+            try {
+                Thread.sleep(300);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            if(y>=21){
+                break;
+            }
         }
 
     }
