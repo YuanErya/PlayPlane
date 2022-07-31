@@ -23,16 +23,16 @@ public class MyPlane extends KeyAdapter implements Runnable {
     public void keyTyped(KeyEvent e) {}
     public void keyPressed(KeyEvent e) {
         switch (e.getKeyCode()) {
-            case KeyEvent.VK_A:
+            case KeyEvent.VK_LEFT:
                 if(x>0){x--;}
                 break;
-            case KeyEvent.VK_W:
+            case KeyEvent.VK_UP:
                 if(y>15){y--;}
                 break;
-            case KeyEvent.VK_S:
+            case KeyEvent.VK_DOWN:
                 if(y<20){y++;}
                 break;
-            case KeyEvent.VK_D:
+            case KeyEvent.VK_RIGHT:
                 if(x<20){x++;}
 
                 break;

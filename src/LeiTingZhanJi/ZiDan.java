@@ -14,7 +14,7 @@ public class ZiDan  implements Runnable{
     }//传入飞机位置坐标,用于创建子弹相对应的位置，子弹初始位置是位于飞机的上方两位的
 
     public  void move(){
-        y-=2;
+        y-=1;
     }//我的飞机所发射的子弹是只能向上发射的，将速度设置为一个默认值要比飞机的飞行速度快
 
     public void getLocation() {
@@ -24,7 +24,15 @@ public class ZiDan  implements Runnable{
 
     @Override
     public void run() {
-
+while(true) {
+    move();
+    getLocation();
+    try {
+        Thread.sleep(300);
+    } catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+}
 
 
     }

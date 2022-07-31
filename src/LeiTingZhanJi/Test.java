@@ -1,4 +1,5 @@
 package LeiTingZhanJi;
+//用方向键来进行移动自己的飞机
 
 public class Test {
     public static void main(String[] args) {
