@@ -1,5 +1,5 @@
 package LeiTingZhanJi;
-//用方向键来进行移动自己的飞机
+//用方向键来进行移动自己的飞机，空格键用于发射子弹
 
 public class Test {
     public static void main(String[] args) {
@@ -7,6 +7,5 @@ public class Test {
         MyPlane m = new MyPlane("my", d);
         Begin b = new Begin(m, d);
         windows w = new windows(m, b);//创建用于监控键盘的窗口
-
     }
 }
