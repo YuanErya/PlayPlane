@@ -13,5 +13,7 @@ public class Begin {
         ZiDan z1=new ZiDan(my,d);
         ZiDan z2=new ZiDan(my,d);
         ex.submit(d);
+        ex.submit(my);
+        ex.submit(e1);
     }
 }

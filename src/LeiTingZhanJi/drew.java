@@ -12,10 +12,11 @@ public class drew implements Runnable {
 
     //该方法用于绘制图形
     public void ST() {
-        for (int i = 0; i < 20; i++) {
-            for (int j = 0; j < 20; j++) {
-                if(jxh.containsKey("x"+i+"y"+j)){
-                    System.out.println(jxh.get("x"+i+"y"+j));
+        jx();
+        for (int i = 0; i < 21; i++) {
+            for (int j = 0; j < 21; j++) {
+                if(jxh.containsKey("x"+j+"y"+i)){
+                    System.out.print(jxh.get("x"+j+"y"+i));
                 }else{
                     System.out.print(" ");
                 }
@@ -23,6 +24,7 @@ public class drew implements Runnable {
             }
             System.out.println();
         }
+        jxh.clear();
     }
 
     //通过传入的各个对象的坐标位置，用于解析出每一个点处的符号信息
@@ -34,13 +36,16 @@ public class drew implements Runnable {
                    jxh.put("x"+(v[0]-1)+"y"+v[1],"=");
                    jxh.put("x"+(v[0]+1)+"y"+v[1],"=");
                    jxh.put("x"+v[0]+"y"+(v[1]-1),"|");
+                   break;
                case 1://获取到敌人的飞机
                    jxh.put("x"+v[0]+"y"+v[1],"=");
                    jxh.put("x"+(v[0]-1)+"y"+v[1],"=");
                    jxh.put("x"+(v[0]+1)+"y"+v[1],"=");
                    jxh.put("x"+v[0]+"y"+(v[1]+1),"|");
+                   break;
                case 2://获取到子弹信息
                    jxh.put("x"+v[0]+"y"+v[1],"*");
+                   break;
            }
        }
     }
