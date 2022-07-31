@@ -16,8 +16,7 @@ public class MyPlane extends KeyAdapter implements Runnable {
         d.marks.put(name,new int[]{x,y,0});
     }
     public void getLocation() {
-        d.marks.remove(name);
-        d.marks.put(name,new int[]{x,y,0});
+       d.marks.put(name,new int[]{x,y,0});
     }
 
 

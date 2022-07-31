@@ -19,8 +19,7 @@ public class Eplane implements Runnable {
     }//敌人飞机只能向下方移动
 
     public void getLocation() {
-        d.marks.remove(name);
-        d.marks.put(name,new int[]{x,y,2});
+        d.marks.put(name,new int[]{x,y,1});
     }
 
 

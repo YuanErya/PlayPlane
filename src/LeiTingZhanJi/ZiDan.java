@@ -18,7 +18,6 @@ public class ZiDan  implements Runnable{
     }//我的飞机所发射的子弹是只能向上发射的，将速度设置为一个默认值要比飞机的飞行速度快
 
     public void getLocation() {
-       d.marks.remove(name);
         d.marks.put(name,new int[]{x,y,2});
     }
 
